@@ -40,20 +40,25 @@ struct ApiCommunicator {
         }
     }
     
+    enum HttpMethod: String {
+        case POST
+        case GET
+    }
+    
     let server: Server
     
     init(server: Server) {
         self.server = server
     }
     
-    func basePostRequest(to route: Route, withCompletion completion: @escaping (Data?, Error?) -> Void) {
+    func baseRequest(method: HttpMethod, to route: Route, withCompletion completion: @escaping (Data?, Error?) -> Void) {
         guard let url = URL(string: server.apiRoute + route.url) else {
             completion(nil, ApiCommunicatorError.invalidEndpoint)
             return
         }
         
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
+        urlRequest.httpMethod = method.rawValue
         
         let session = URLSession.shared
         
@@ -68,14 +73,14 @@ struct ApiCommunicator {
         task.resume()
     }
     
-    func basePostRequest<T: Encodable>(to route: Route, with data: T, withCompletion completion: @escaping (Data?, Error?) -> Void) {
+    func baseRequest<T: Encodable>(method: HttpMethod, to route: Route, with data: T, withCompletion completion: @escaping (Data?, Error?) -> Void) {
         guard let url = URL(string: server.apiRoute + route.url) else {
             completion(nil, ApiCommunicatorError.invalidEndpoint)
             return
         }
         
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
+        urlRequest.httpMethod = method.rawValue
         
         let encoder = JSONEncoder()
         do {
