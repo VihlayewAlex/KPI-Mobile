@@ -13,9 +13,11 @@
 		3A235DE420457B8E00AEC947 /* KPI_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A235DE220457B8E00AEC947 /* KPI_Mobile.xcdatamodeld */; };
 		3A235DE620457B8E00AEC947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A235DE520457B8E00AEC947 /* Assets.xcassets */; };
 		3A235DE920457B8E00AEC947 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A235DE720457B8E00AEC947 /* LaunchScreen.storyboard */; };
+		B620160D890698DC7B039DE6 /* Pods_KPI_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E7861770318F6F7F1696A7 /* Pods_KPI_Mobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17689160D5254B8524C77DF4 /* Pods-KPI Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KPI Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-KPI Mobile/Pods-KPI Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		3A235DD820457B8E00AEC947 /* KPI Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KPI Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A235DDB20457B8E00AEC947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A235DDD20457B8E00AEC947 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		3A235DE520457B8E00AEC947 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A235DE820457B8E00AEC947 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A235DEA20457B8E00AEC947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49349955F8BA617BD9FF195E /* Pods-KPI Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KPI Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KPI Mobile/Pods-KPI Mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		A3E7861770318F6F7F1696A7 /* Pods_KPI_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KPI_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B620160D890698DC7B039DE6 /* Pods_KPI_Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				3A235DDA20457B8E00AEC947 /* KPI Mobile */,
 				3A235DD920457B8E00AEC947 /* Products */,
+				DE939E141A3A8A02B6616B0B /* Pods */,
+				D0DB4E7448E9C5A2F1A7985F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = "KPI Mobile";
 			sourceTree = "<group>";
 		};
+		D0DB4E7448E9C5A2F1A7985F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3E7861770318F6F7F1696A7 /* Pods_KPI_Mobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE939E141A3A8A02B6616B0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49349955F8BA617BD9FF195E /* Pods-KPI Mobile.debug.xcconfig */,
+				17689160D5254B8524C77DF4 /* Pods-KPI Mobile.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A235DED20457B8E00AEC947 /* Build configuration list for PBXNativeTarget "KPI Mobile" */;
 			buildPhases = (
+				6FD5345F22BAC8428C191ACF /* [CP] Check Pods Manifest.lock */,
 				3A235DD420457B8E00AEC947 /* Sources */,
 				3A235DD520457B8E00AEC947 /* Frameworks */,
 				3A235DD620457B8E00AEC947 /* Resources */,
+				24294DA065DE47BD46DCC37E /* [CP] Embed Pods Frameworks */,
+				4829CF64623B2A4F1E83835A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24294DA065DE47BD46DCC37E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KPI Mobile/Pods-KPI Mobile-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KPI Mobile/Pods-KPI Mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4829CF64623B2A4F1E83835A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KPI Mobile/Pods-KPI Mobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FD5345F22BAC8428C191ACF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KPI Mobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A235DD420457B8E00AEC947 /* Sources */ = {
@@ -276,11 +359,13 @@
 		};
 		3A235DEE20457B8E00AEC947 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49349955F8BA617BD9FF195E /* Pods-KPI Mobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22U234HGU8;
 				INFOPLIST_FILE = "KPI Mobile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "vihlayew.KPI-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,11 +376,13 @@
 		};
 		3A235DEF20457B8E00AEC947 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17689160D5254B8524C77DF4 /* Pods-KPI Mobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22U234HGU8;
 				INFOPLIST_FILE = "KPI Mobile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "vihlayew.KPI-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
