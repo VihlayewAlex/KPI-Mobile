@@ -22,8 +22,15 @@ extension Server {
 
 struct ApiCommunicator {
     
-    enum ApiCommunicatorError: Error {
-        case invalidEndpoint
+    enum ApiCommunicatorError: Error, LocalizedError {
+        case invalidEndpoint(String)
+        
+        var errorDescription: String? {
+            switch self {
+            case .invalidEndpoint(let endpointString):
+                return "Invalid endpoint: " + endpointString
+            }
+        }
     }
     
     enum HttpMethod: String {
@@ -38,9 +45,8 @@ struct ApiCommunicator {
     }
     
     func baseRequest(method: HttpMethod, to route: Route, withCompletion completion: @escaping (Data?, Error?) -> Void) {
-        print(server.apiRoute + route.url)
         guard let url = URL(string: server.apiRoute + route.url) else {
-            completion(nil, ApiCommunicatorError.invalidEndpoint)
+            completion(nil, ApiCommunicatorError.invalidEndpoint(server.apiRoute + route.url))
             return
         }
         
@@ -62,7 +68,7 @@ struct ApiCommunicator {
     
     func baseRequest<T: Encodable>(method: HttpMethod, to route: Route, with data: T, withCompletion completion: @escaping (Data?, Error?) -> Void) {
         guard let url = URL(string: server.apiRoute + route.url) else {
-            completion(nil, ApiCommunicatorError.invalidEndpoint)
+            completion(nil, ApiCommunicatorError.invalidEndpoint(server.apiRoute + route.url))
             return
         }
         

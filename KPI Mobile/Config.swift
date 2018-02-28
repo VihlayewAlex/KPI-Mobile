@@ -14,7 +14,7 @@ enum Route {
     var url: String {
         switch self {
         case .groupsPagination(let limit, let offset):
-            return "groups/?filter={\"limit\":\(limit),\"offset\":\(offset)}"
+            return "groups/?filter={\"limit\":\(limit),\"offset\":\(offset)}".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         case .groupByName(let name):
             return "groups/" + name
         }
