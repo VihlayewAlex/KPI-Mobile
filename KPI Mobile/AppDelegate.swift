@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let server: Server = Server(scheme: "https", domain: "api.rozklad.org.ua", apiVersion: 2)
+        let service: ScheduleService = ScheduleService(server: server)
+        service.getGroupBy(limit: 10, offset: 5)
         return true
     }
 

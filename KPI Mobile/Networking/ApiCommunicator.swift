@@ -26,20 +26,6 @@ struct ApiCommunicator {
         case invalidEndpoint
     }
     
-    enum Route {
-        case groupsPagination(limit: Int, offset: Int)
-        case groupByName(name: String)
-        
-        var url: String {
-            switch self {
-                case .groupsPagination(let limit, let offset):
-                    return "groups/?filter={\"limit\":\(limit),\"offset\":\(offset)}"
-                case .groupByName(let name):
-                    return "groups/" + name
-            }
-        }
-    }
-    
     enum HttpMethod: String {
         case POST
         case GET
@@ -52,6 +38,7 @@ struct ApiCommunicator {
     }
     
     func baseRequest(method: HttpMethod, to route: Route, withCompletion completion: @escaping (Data?, Error?) -> Void) {
+        print(server.apiRoute + route.url)
         guard let url = URL(string: server.apiRoute + route.url) else {
             completion(nil, ApiCommunicatorError.invalidEndpoint)
             return

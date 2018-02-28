@@ -14,6 +14,9 @@
 		3A235DE620457B8E00AEC947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A235DE520457B8E00AEC947 /* Assets.xcassets */; };
 		3A235DE920457B8E00AEC947 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A235DE720457B8E00AEC947 /* LaunchScreen.storyboard */; };
 		3A235DF320458B3900AEC947 /* ApiCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A235DF220458B3900AEC947 /* ApiCommunicator.swift */; };
+		948970D12045A9DC00298878 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948970D02045A9DC00298878 /* Group.swift */; };
+		948970D42045AA6000298878 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948970D32045AA6000298878 /* ScheduleService.swift */; };
+		948970D92045ADC400298878 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948970D82045ADC400298878 /* Config.swift */; };
 		B620160D890698DC7B039DE6 /* Pods_KPI_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E7861770318F6F7F1696A7 /* Pods_KPI_Mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		3A235DEA20457B8E00AEC947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A235DF220458B3900AEC947 /* ApiCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCommunicator.swift; sourceTree = "<group>"; };
 		49349955F8BA617BD9FF195E /* Pods-KPI Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KPI Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KPI Mobile/Pods-KPI Mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		948970D02045A9DC00298878 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		948970D32045AA6000298878 /* ScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
+		948970D82045ADC400298878 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A3E7861770318F6F7F1696A7 /* Pods_KPI_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KPI_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -67,6 +73,7 @@
 			children = (
 				3A235DEA20457B8E00AEC947 /* Info.plist */,
 				3A235DDB20457B8E00AEC947 /* AppDelegate.swift */,
+				948970D82045ADC400298878 /* Config.swift */,
 				3A235DF020458AE000AEC947 /* View */,
 				3A235DF120458B0100AEC947 /* Networking */,
 				3A235DE520457B8E00AEC947 /* Assets.xcassets */,
@@ -88,9 +95,27 @@
 		3A235DF120458B0100AEC947 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				948970D22045A9F700298878 /* Services */,
+				948970CF2045A94700298878 /* Entities */,
 				3A235DF220458B3900AEC947 /* ApiCommunicator.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		948970CF2045A94700298878 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				948970D02045A9DC00298878 /* Group.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		948970D22045A9F700298878 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				948970D32045AA6000298878 /* ScheduleService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D0DB4E7448E9C5A2F1A7985F /* Frameworks */ = {
@@ -241,9 +266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				948970D42045AA6000298878 /* ScheduleService.swift in Sources */,
 				3A235DE420457B8E00AEC947 /* KPI_Mobile.xcdatamodeld in Sources */,
 				3A235DDE20457B8E00AEC947 /* ViewController.swift in Sources */,
 				3A235DDC20457B8E00AEC947 /* AppDelegate.swift in Sources */,
+				948970D92045ADC400298878 /* Config.swift in Sources */,
+				948970D12045A9DC00298878 /* Group.swift in Sources */,
 				3A235DF320458B3900AEC947 /* ApiCommunicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
