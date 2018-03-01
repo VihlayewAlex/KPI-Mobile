@@ -19,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let server: Server = Server(scheme: "https", domain: "api.rozklad.org.ua", apiVersion: 2)
         let service: ScheduleService = ScheduleService(server: server)
-        service.getGroupBy(limit: 10, offset: 5)
+        service.getManyElementsBy(route: .groupsPagination(limit: 1, offset: 1), elementType: Group.self)
+        service.getManyElementsBy(route: .teacherPagination(limit: 1, offset: 1), elementType: Teacher.self)
+        service.getOneElementBy(route: .currentWeek(), elementType: Int.self)
+        service.getManyElementsBy(route: .groupScheduleByName(group: "іп-63"), elementType: Schedule.self)
         return true
     }
 

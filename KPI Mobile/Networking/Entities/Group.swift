@@ -7,12 +7,11 @@
 //
 
 struct Group: Decodable {
-    var id: Int
-    var fullName: String
-    var prefix: String
-    var okr: String
-    var type: String
-    var url: String
+    let id: Int?
+    let fullName: String
+    let prefix: String
+    let okr: String
+    let type: String
     
     enum CodingKeys: String, CodingKey {
         case id = "group_id"
@@ -20,12 +19,11 @@ struct Group: Decodable {
         case prefix = "group_prefix"
         case okr = "group_okr"
         case type = "group_type"
-        case url = "group_url"
     }
 }
 
 extension Group: CustomStringConvertible {
     var description: String {
-        return "[\(id) \(fullName) \(prefix) \(okr) \(type) \(url)]"
+        return "[\(id) \(fullName) \(prefix) \(okr) \(type)]"
     }
 }
